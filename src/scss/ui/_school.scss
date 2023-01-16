@@ -1,0 +1,22 @@
+@use "abstract/mixin" as m;
+@use "abstract/variable" as v;
+
+.school {
+  padding: 20rem 0;
+  text-align: center;
+  background-image: url(../img/chef_bg.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: v.$white;
+  &__title {
+    font-weight: 700;
+  }
+  &__text {
+    max-width: 30rem;
+    margin: 0 auto;
+  }
+  &__link {
+    @include m.button(v.$primary, v.$white);
+  }
+}

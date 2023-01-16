@@ -131,13 +131,12 @@
 }
 
 @mixin button($color, $text) {
- 
   background-color: $color;
   padding: 1.5rem 4rem;
   color: $text;
   margin-top: 2rem;
   font-size: 2rem;
- 
+
   display: inline-block;
   font-weight: 700;
   border: none;
@@ -145,46 +144,12 @@
   transition-property: background-color;
   transition-duration: 0.3s;
 
-
   @include screen("md") {
     width: auto;
   }
   &:hover {
     background-color: darken($color, 10%);
   }
-}
-
-@mixin bgImage($url, $color) {
-  background-image: linear-gradient($color 0%, $color 100%), url($url);
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: top center;
-}
-
-@mixin headingBorder($color, $lineColor) {
-  display: inline-block;
-  margin-top: 5rem;
-  color: $color;
-
-  @include screen("table") {
-    margin-top: 0;
-  }
-
-  &::after {
-    content: "";
-    background-color: $lineColor;
-    height: 1rem;
-    width: calc(100% + 1rem);
-    display: block;
-    margin: -2rem 0 0 0;
-  }
-}
-
-@mixin bgIcon($url) {
-  background-image: url($url);
-  background-repeat: no-repeat;
-  background-position: center 2rem;
-  background-size: 10rem;
 }
 
 /// create scroll view horizontally
@@ -206,22 +171,14 @@
 }
 
 @mixin title() {
-  text-transform: uppercase;
   text-align: center;
-  font-weight: 400;
-}
-@mixin headingCursive() {
-  text-align: center;
-  color: v.$secondary;
-  font-family: v.$font-secondary;
-  line-height: 0.8;
-  font-weight: 400;
-  text-transform: lowercase;
-  font-size: 4rem;
-  span {
-    color: v.$black;
-    text-transform: uppercase;
+  &::after {
+    content: "";
     display: block;
-    font-family: v.$font-primary;
+    height: 10rem;
+    margin: 0 auto;
+    background-image: url(../img/separador.png);
+    background-repeat: no-repeat;
+    background-position: center;
   }
 }
