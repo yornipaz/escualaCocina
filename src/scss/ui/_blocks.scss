@@ -1,0 +1,49 @@
+@use "abstract/mixin" as m;
+@use "abstract/variable" as v;
+.blocks {
+  &__wrapper {
+    @include m.screen("md") {
+      @include m.grid(2, 0rem);
+      grid-auto-flow: dense;
+    }
+  }
+}
+.block {
+  height: 40rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  &__content {
+    max-width: 40rem;
+    border-block: 1px solid v.$white;
+    padding: 1rem 0;
+    color: v.$white;
+  }
+  &__title {
+    text-transform: uppercase;
+  }
+
+  &:nth-child(1) {
+    background-color: v.$primary;
+  }
+  &:nth-child(2) {
+    background-image: url("../img/bloque_1.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  &:nth-child(3) {
+    background-color: v.$secondary;
+    @include m.screen("md") {
+      grid-column: 2 / 3;
+    }
+  }
+  &:nth-child(4) {
+    background-image: url("../img/bloque_2.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+}
